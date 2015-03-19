@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Country:</b>
+  <%= @country_info.country_id %>
+</p>
+
+<p>
+  <b>Country name:</b>
+  <%= @country_info.country_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_info_path(@country_info) %> |
+<%= link_to 'Back', country_infos_path %>

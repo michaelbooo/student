@@ -1,0 +1,37 @@
+<h1>Listing movie_infos</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Movie</th>
+    <th>Title</th>
+    <th>Derector</th>
+    <th>Actor</th>
+    <th>Year</th>
+    <th>Movie type</th>
+    <th>Countray</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @movie_infos.each do |movie_info| %>
+  <tr>
+    <td><%= image_tag(movie_info.image, class: 'list_image') %></td>
+    <td><%= movie_info.movie_id %></td>
+    <td><%= movie_info.title %></td>
+    <td><%= movie_info.derector %></td>
+    <td><%= movie_info.actor %></td>
+    <td><%= movie_info.year %></td>
+    <td><%= get_movie_type(movie_info.movie_type) %></td>
+    <td><%= movie_info.countray %></td>
+    <td><%= link_to 'Show', movie_info %></td>
+    <td><%= link_to 'Edit', edit_movie_info_path(movie_info) %></td>
+    <td><%= link_to 'Destroy', movie_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movie info', new_movie_info_path %>

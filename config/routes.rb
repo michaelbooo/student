@@ -1,4 +1,16 @@
 Student::Application.routes.draw do
+  resources :movie_details
+
+
+  resources :country_infos
+
+
+  resources :type_infos
+
+
+  resources :movie_infos
+
+
   resources :users
 
 

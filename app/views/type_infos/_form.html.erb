@@ -1,0 +1,25 @@
+<%= form_for(@type_info) do |f| %>
+  <% if @type_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@type_info.errors.count, "error") %> prohibited this type_info from being saved:</h2>
+
+      <ul>
+      <% @type_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_name %><br />
+    <%= f.text_field :type_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
